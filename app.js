@@ -32,6 +32,27 @@ if ('development' == app.get('env')) {
   app.use(errorhandler());
 }
 
+// ADD THESE NEW ROUTES HERE
+app.get('/health', function(req, res) {
+    console.log('=== HEALTH CHECK ACCESSED ===');
+    console.log('Time:', new Date().toISOString());
+    
+    res.json({
+        status: 'OK',
+        message: 'Server is running',
+        timestamp: new Date().toISOString()
+    });
+});
+
+app.get('/test', function(req, res) {
+    console.log('🚀 TEST ROUTE ACCESSED!');
+    
+    res.json({
+        message: 'Test successful - check Vercel logs!',
+        timestamp: new Date().toISOString()
+    });
+});
+
 // HubExchange Routes
 app.get('/', routes.index );
 app.post('/login', routes.login );
