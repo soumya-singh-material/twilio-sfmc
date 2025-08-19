@@ -1,6 +1,7 @@
 'use strict';
 // Module Dependencies
 // -------------------
+console.log('=== App Starting ===');
 var express     = require('express');
 var bodyParser  = require('body-parser');
 var errorhandler = require('errorhandler');
@@ -10,8 +11,12 @@ var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
+console.log('All modules loaded successfully');
+
 var app = express();
-console.log("Checking the Value");
+
+console.log('Express app created');
+
 // Configure Express
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json({type: 'application/json'})); 
