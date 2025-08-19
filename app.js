@@ -11,7 +11,7 @@ var routes      = require('./routes');
 var activity    = require('./routes/activity');
 
 var app = express();
-
+console.log("Checking the Value");
 // Configure Express
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json({type: 'application/json'})); 
