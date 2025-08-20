@@ -53,6 +53,10 @@ app.get('/test', function(req, res) {
     });
 });
 
+app.get('/working', function(req, res) {
+    res.send('WORKING!');
+});
+
 // HubExchange Routes
 app.get('/', routes.index );
 app.post('/login', routes.login );
