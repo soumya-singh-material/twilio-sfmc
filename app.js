@@ -58,6 +58,10 @@ app.get('/', routes.index );
 app.post('/login', routes.login );
 app.post('/logout', routes.logout );
 
+app.get('/simple', function(req, res) {
+    res.send('Simple route works! Time: ' + new Date());
+});
+
 // Custom Hello World Activity Routes
 app.post('/journeybuilder/save/', activity.save );
 app.post('/journeybuilder/validate/', activity.validate );
